@@ -7,12 +7,8 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 600px;
+nav{
+    margin-bottom: 40px;
 }
 
 .footer {
