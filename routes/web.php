@@ -25,13 +25,16 @@ Route::get('/contact', 'PagesController@contact');
 //     return view('contact');
 // });
 
-Route::get('/assignments', 'PagesController@assignments');
+Route::get('/assignments', 'AssignmentsController@index');
 
 // Route::get('/assignments', function () {
 //     return view('assignments');
 // });
 
 Route::get('/dashboard', 'PagesController@dashboard');
+
+
+Route::get('/courses', 'CoursesController@index');
 
 // Route::get('/dashboard', function () {
     
