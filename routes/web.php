@@ -25,7 +25,13 @@ Route::get('/contact', 'PagesController@contact');
 //     return view('contact');
 // });
 
+// Route::resource('/assignments', AssignmentsController); //all in one
 Route::get('/assignments', 'AssignmentsController@index');
+Route::get('/assignments/create', 'AssignmentsController@create');
+Route::get('/assignments/{assignment}', 'AssignmentsController@show');
+Route::post('/assignments', 'AssignmentsController@store');
+Route::get('/assignments/{assignment}/edit', 'AssignmentsController@edit');
+Route::patch('/assignments/{assignment}', 'AssignmentsController@update');
 
 // Route::get('/assignments', function () {
 //     return view('assignments');
