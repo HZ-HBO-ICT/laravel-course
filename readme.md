@@ -1,6 +1,6 @@
 # Inhoudsopgave
 
-1.  [Introductie](../docs/laravel/01 - Introductie.md)
+1.  [Introductie](../docs/laravel/01-Introductie.md)
 2.  [MVC](../docs/laravel/02-MVC.md)
 3.  [REST](../docs/laravel/03-REST.md)
 4.  [CRUD](../docs/laravel/04-CRUD.md)

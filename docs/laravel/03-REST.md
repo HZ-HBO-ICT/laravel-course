@@ -1,11 +1,12 @@
+REST
+====
+
 Rest is een acroniem voor representational state transfer en is in 2000 geopperd door Roy Fielding ([https://www.ics.uci.edu/~fielding/pubs/dissertation/rest\_arch\_style.htm](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)).
 
 In de context van Laravel gaat het heel plat gezegd over een **resource** en een **actie** die op die resource kan worden uitgevoerd.
 
 Resource
 --------
-
----
 
 Wanneer aan informatie een goede naam kan worden gegeven spreekt men vaak van een resource. Voorbeelden zijn: een plaatje, een student, een cursus. Vaak komt dit overeen met een tabel. De resource wordt uniek geidentificeert door een URI (unique resource identifier). Een voorbeeld staat in de code hieronder.
 
@@ -24,8 +25,6 @@ Hierbij is de /assignments een resource en wanneer je dit intypt in de browser w
 
 Actie
 -----
-
----
 
 Een route zorgt er voor dat er een ‘weg’ is naar een bepaalde resource. Deze route is een uri (unique resource identifier) die verwijst naar een resource aangevuld met een actie. Deze actie geeft aan wat er met de resource moet gebeuren.
 

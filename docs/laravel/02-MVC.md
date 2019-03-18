@@ -1,3 +1,6 @@
+MVC
+===
+
 MVC is een design pattern om code op een bepaalde manier te structureren. Het pattern is opgedeeld in de volgende lagen.
 
 * Model: definieert de representatie van de informatie waarmee de applicatie werkt.

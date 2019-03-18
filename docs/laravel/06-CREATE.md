@@ -1,9 +1,10 @@
+CREATE
+======
+
 Met een Create iwillen we een of meerdere rijen in een tabel creëren door middel van een formulier. Om dit creëren mogelijk te maken in de MVC structuur van Laravel moeten we de volgende aspecten invullen: database, route, model, controller en view.
 
 Database
 --------
-
----
 
 In Laravel creëer je een database in een migration. Dit is een php bestand waarin staat wat je met de database wilt doen. Je creëert een migratie door het volgende commando.
 
@@ -35,8 +36,6 @@ php artisan migrate
 **Route**
 ---------
 
----
-
 In het geval van een create zijn er 2 routes nodig. De routes worden aangemaakt in /routes/web.php.
 
 **1\. route voor tonen formulier**
@@ -60,14 +59,10 @@ In dit geval zie je dat er gebruik wordt gemaakt van de actie ‘post’. Die ac
 Model
 -----
 
----
-
 Een model is verantwoordelijk voor de relatie met een tabel uit de database. Waarbij de database tabel in het meervoud staat, is het model enkelvoud.
 
 Controller
 ----------
-
----
 
 Een controller is verantwoordelijk voor het verwerken van de route en via het model bevragen of manipuleren van de database. Het generen van een controller en model kan door middel van 1 enkel artisan commando.
 
@@ -106,8 +101,6 @@ In de tweede route wordt de functie store van de AssignmentsController aangeroep
 
 View
 ----
-
----
 
 De controller retourneert een view naar de browser. In eerste instantie wordt het create formulier getoond. Het is een goed gebruik om voor een resource een aparte map aan te maken. In dit geval de map assignments. In deze map komen dan de views te staan die bij assignments horen. We beginnen met create.blade.php
 
