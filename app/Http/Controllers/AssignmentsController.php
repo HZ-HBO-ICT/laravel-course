@@ -23,12 +23,24 @@ class AssignmentsController extends Controller
 
     public function store()
     {
-        $assignment = new Assignment();
+        // Shorthand
+        // Option 1
+        Assignment::create([
+            'project_name' => request('projectNameInput'),
+            'image_url' => request('imageUrlInput'),
+            'description' => request('projectDescriptionTextArea')
+        ]);
 
-        $assignment->project_name = request('projectNameInput');
-        $assignment->image_url = request('imageUrlInput');
-        $assignment->description = request('projectDescriptionTextArea');
-        $assignment->save();
+        // Option 2, will not work because of difference in naming request elements
+        // Assignment::create(request(['project_name', 'image_url', 'description']));
+        
+        // option 3
+        // $assignment = new Assignment();
+
+        // $assignment->project_name = request('projectNameInput');
+        // $assignment->image_url = request('imageUrlInput');
+        // $assignment->description = request('projectDescriptionTextArea');
+        // $assignment->save();
 
         return redirect('/assignments');
 
@@ -38,14 +50,14 @@ class AssignmentsController extends Controller
 
     public function edit($id)
     {
-        $assignment = Assignment::find($id);
+        $assignment = Assignment::findOrFail($id);
         return view('assignments.edit', compact('assignment'));
     }
 
     public function update($id)
     {
 
-        $assignment = Assignment::find($id);
+        $assignment = Assignment::findOrFail($id);
 
         $assignment->project_name = request('projectNameInput');
         $assignment->image_url = request('imageUrlInput');
@@ -57,16 +69,20 @@ class AssignmentsController extends Controller
 
     }
 
-    public function show($id)
+    // route model binding 
+    //    public function show($id)
+    public function show(Assignment $assignment)
     {
-        $assignment = Assignment::find($id);
+        // $assignment = Assignment::findOrFail($id);
         
         return view('assignments.show', compact('assignment'));
 
     } 
 
-    public function destroy()
+    public function destroy($id)
     {
+        Assignment::findOrFail($id)->delete();
+        return redirect('/assignments');
 
     }
 

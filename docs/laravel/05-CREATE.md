@@ -1,18 +1,18 @@
 CREATE
 ======
 
-Met een Create iwillen we een of meerdere rijen in een tabel creëren door middel van een formulier. Om dit creëren mogelijk te maken in de MVC structuur van Laravel moeten we de volgende aspecten invullen: database, route, model, controller en view.
+Met een **create** willen we een of meerdere rijen in een of meerdere tabel creëren. Vaak gebruiken we hier een formulier. Om dit creëren mogelijk te maken in de MVC structuur van Laravel moeten we de volgende aspecten invullen: database, route, model, controller en view.
 
 Database
 --------
 
-In Laravel creëer je een database in een migration. Dit is een php bestand waarin staat wat je met de database wilt doen. Je creëert een migratie door het volgende commando.
+In Laravel creëer je een database in een migration. Dit is een php bestand waarin staat wat je met de database wilt doen. In ons geval willen we een tabel creëren. Je creëert een migratie door het volgende commando.
 
 ```c
 php artisan make:migration create_assignments_table
 ```
 
-In dit geval is dit een ‘assignments’ tabel. Wanneer je navigeert naar de map /databases/migrations/{datum-en-tijdstip}\_create\_assignments\_table zie je dat er een migratie is aangemaakt. Je moet daar nog de juiste velden/kolommen (zie <https://laravel.com/docs/5.8/migrations>) toevoegen die voor jouw tabel van belang zijn. Let op dat je meervoud gebruikt.
+In dit geval creëer je een migration die een dit een ‘assignments’ tabel maakt. Wanneer je navigeert naar de map /databases/migrations/{datum-en-tijdstip}\_create\_assignments\_table zie je dat er een migratie is aangemaakt. Je moet daar nog de juiste velden/kolommen (zie <https://laravel.com/docs/5.8/migrations>) toevoegen die voor jouw tabel van belang zijn. Let op dat je meervoud (assignments) gebruikt.
 
 ```php
 public function up()

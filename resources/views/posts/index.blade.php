@@ -4,18 +4,17 @@
 
 @section('content')
 
-    <h1>All my assignments</h1>
+    <h1>All my posts</h1>
     <div class="row">
-        @foreach ($assignments as $row)
+        @foreach ($posts as $row)
             <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
-                    <img class="card-img-top" src="{{$row->image_url}}" alt="">
+                    <img class="card-img-top" src="{{$row->intro_photo}}" alt="">
                     <div class="card-body">
-                    <h5 class="card-title"><a href="/assignments/{{ $row->id }}">{{$row->project_name}}</a></h5>
+                        <h5 class="card-title">{{$row->title}}</h5>
                             <p class="card-text">
                                 {{$row->description}}
                             </p>
-                            <p>Days of work: {{ $row->numberOfDays()->days }}</p>
                     </div>
                 </div>
             </div>    

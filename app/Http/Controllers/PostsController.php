@@ -14,7 +14,11 @@ class PostsController extends Controller
      */
     public function index()
     {
-        //
+        $posts = \App\Post::all();
+
+        // return $courses;
+
+        return view('posts.index', compact('posts'));
     }
 
     /**
@@ -24,7 +28,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
@@ -35,7 +39,14 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $post = new Post();
+
+        $post->title = request('post-title');
+        $post->intro_photo = request('post-photo');
+        $post->description = request('post-description');
+        $post->save();
+
+        return redirect('/posts');
     }
 
     /**

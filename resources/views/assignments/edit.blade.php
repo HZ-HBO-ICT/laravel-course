@@ -8,7 +8,7 @@
     
         {{-- <form method="POST" action="/assignments/{{ $assignment->id }}"> --}}
         <form method="POST" action="{{ url("/assignments/$assignment->id") }}">
-        
+
         {{ method_field('PATCH') }}
         {{ csrf_field() }}
 
@@ -27,6 +27,20 @@
         <div class="form-group">
             <button type="submit" class="form-control btn btn-primary mb-2">Submit</button>
         </div>
+      </form>
+      
+      <form method="POST" action="{{ url("/assignments/$assignment->id") }}">
+
+        <!-- blade derectives -->
+        {{-- @method('DELETE')
+        @csrf --}}
+
+        {{ method_field('DELETE') }}
+        {{ csrf_field() }}
+
+        <div class="form-group">
+          <button type="delete" class="form-control btn btn-danger mb-2">Delete</button>
+      </div>
       </form>
 
 @endsection

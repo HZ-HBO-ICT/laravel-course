@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PostsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,6 +34,10 @@ Route::get('/assignments/{assignment}', 'AssignmentsController@show');
 Route::post('/assignments', 'AssignmentsController@store');
 Route::get('/assignments/{assignment}/edit', 'AssignmentsController@edit');
 Route::patch('/assignments/{assignment}', 'AssignmentsController@update');
+Route::delete('assignments/{assignment}', 'AssignmentsController@destroy');
+
+Route::resource('/posts', 'PostsController'); //all in one
+
 
 // Route::get('/assignments', function () {
 //     return view('assignments');
