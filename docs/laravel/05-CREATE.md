@@ -1,7 +1,7 @@
 CREATE
 ======
 
-Met een **create** willen we een of meerdere rijen in een of meerdere tabel creëren. Vaak gebruiken we hier een formulier. Om dit creëren mogelijk te maken in de MVC structuur van Laravel moeten we de volgende aspecten invullen: database, route, model, controller en view.
+Met een Create willen we een of meerdere rijen in een tabel creëren door middel van een formulier. Om dit creëren mogelijk te maken in de MVC structuur van Laravel moeten we de volgende aspecten invullen: database, route, model, controller en view.
 
 Database
 --------
@@ -12,7 +12,7 @@ In Laravel creëer je een database in een migration. Dit is een php bestand waar
 php artisan make:migration create_assignments_table
 ```
 
-In dit geval creëer je een migration die een dit een ‘assignments’ tabel maakt. Wanneer je navigeert naar de map /databases/migrations/{datum-en-tijdstip}\_create\_assignments\_table zie je dat er een migratie is aangemaakt. Je moet daar nog de juiste velden/kolommen (zie <https://laravel.com/docs/5.8/migrations>) toevoegen die voor jouw tabel van belang zijn. Let op dat je meervoud (assignments) gebruikt.
+In dit geval is dit een ‘assignments’ tabel. Wanneer je navigeert naar de map `/databases/migrations/{datum-en-tijdstip}\create\_assignments\_table` zie je dat er een migratie is aangemaakt. Je moet daar nog de juiste velden/kolommen (zie <https://laravel.com/docs/5.8/migrations>) toevoegen die voor jouw tabel van belang zijn. Let op dat je meervoud gebruikt.
 
 ```php
 public function up()
@@ -36,7 +36,7 @@ php artisan migrate
 **Route**
 ---------
 
-In het geval van een create zijn er 2 routes nodig. De routes worden aangemaakt in /routes/web.php.
+In het geval van een create zijn er 2 routes nodig. De routes worden aangemaakt in `/routes/web.php`.
 
 **1\. route voor tonen formulier**
 
@@ -54,7 +54,7 @@ Wanneer het formulier is verkregen dan wordt dit ingevuld en wordt er op verstur
 Route::post('/assignments', 'AssignmentsController@store');
 ```
 
-In dit geval zie je dat er gebruik wordt gemaakt van de actie ‘post’. Die actie wordt ook in de route meegenomen zodat de route weet welke actie er moeten worden uitgevoerd op die bepaalde resource. Je ziet ook dat er naar een zelfde ‘AssignmentsController’ wordt verwezen maar dan wel naar een aparte functie (@create en @store).
+In dit geval zie je dat er gebruik wordt gemaakt van de actie ‘post’. Die actie wordt ook in de route meegenomen zodat de route weet welke actie er moeten worden uitgevoerd op die bepaalde resource. Je ziet ook dat er naar een zelfde ‘AssignmentsController’ wordt verwezen maar dan wel naar een aparte functie (`@create` en `@store`).
 
 Model
 -----
@@ -70,7 +70,7 @@ Een controller is verantwoordelijk voor het verwerken van de route en via het mo
 php artisan make:controller AssignmentsController -r -m Assignment
 ```
 
-In dit commando wordt een AssignmentsController gemaakt. Let op dat dit weer meervoud is. De toevoeging -r zorgt er voor dat er verschillende functies in de controller worden aangemaakt die met de resource Assignments samenhangt. de -m Assignment toevoeging zorgt er voor dat er tevens een model Assignment (let op enkelvoud) wordt gemaakt. De controller vind je in /app/http/controller het model vind je in /app.
+In dit commando wordt een AssignmentsController gemaakt. Let op dat dit weer meervoud is. De toevoeging -r zorgt er voor dat er verschillende functies in de controller worden aangemaakt die met de resource Assignments samenhangt. de -m Assignment toevoeging zorgt er voor dat er tevens een model Assignment (let op enkelvoud) wordt gemaakt. De controller vind je in `/app/Http/Controller` het model vind je in `/app`.
 
 ```php
 public function create()
